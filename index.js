@@ -1,11 +1,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     todos = JSON.parse(localStorage.getItem('todos')) || [];
-    const username = localStorage.getItem('username') || '';
     let nameinput = document.getElementById('nameinput');
     let contentinput = document.getElementById('content');
-
-
+    
+    
+    const username = localStorage.getItem('username') || '';
     nameinput.value = username;
     nameinput.addEventListener('change', () => {
         localStorage.setItem('username', nameinput.value)
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             done: false,
         }
         todos.push(todo);
-
+console.log(todo.category)
         localStorage.setItem('todos', JSON.stringify(todos));
         e.target.reset();
         Displaytodos();
